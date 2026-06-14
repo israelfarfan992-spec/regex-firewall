@@ -80,3 +80,16 @@ Result:
 Explanation:
 The regular expression matches event lines where the action is ACCEPT, the protocol is TCP, and the destination port is 80. The end-of-line anchor ($) ensures that the destination port is matched in the correct field before the size value.
 ```
+## Task 7
+
+Command:
+```bash
+grep -Ec '^[0-9]{4}-[0-9]{2}-[0-9]{2} 0[0-2]:' firewall.log
+```
+
+Result:
+13138
+
+Explanation:
+The regular expression matches lines where the date is followed by a time starting with 00, 01, or 02. The character class [0-2] limits the hour range, and the anchor ensures the time field appears immediately after the date.
+```
