@@ -36,3 +36,16 @@ Result:
 Explanation:
 The pattern matches a space followed by 11\. so the dot is treated as a literal character instead of a wildcard. This counts events whose source IP address begins with 11.
 ```
+## Task 4
+
+Command:
+```bash
+grep -Ec ' [0-9]{7}$' firewall.log
+```
+
+Result:
+2343
+
+Explanation:
+The pattern [0-9]{7} matches exactly seven digits, and the $ anchor ensures that the match is at the end of the line. This counts packets whose size field has seven digits.
+```
