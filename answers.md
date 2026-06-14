@@ -67,3 +67,16 @@ Result:
 
 Explanation:
 The grep command removes header lines by matching lines that start with a digit. The sed command uses capture groups to keep the date, action, and protocol, then rebuilds the output with backreferences.
+## Task 6
+
+Command:
+```bash
+grep -Ec '^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2} ACCEPT TCP .* 80 [0-9]+$' firewall.log
+```
+
+Result:
+93
+
+Explanation:
+The regular expression matches event lines where the action is ACCEPT, the protocol is TCP, and the destination port is 80. The end-of-line anchor ($) ensures that the destination port is matched in the correct field before the size value.
+```
