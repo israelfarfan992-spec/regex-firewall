@@ -23,3 +23,16 @@ Result:
 Explanation:
 The parentheses create a group and the | operator means OR, so it matches DROP or REJECT. The spaces around the group ensure that only the action field is matched.
 ```
+## Task 3
+
+Command:
+```bash
+grep -Ec ' 11\.' firewall.log
+```
+
+Result:
+33217
+
+Explanation:
+The pattern matches a space followed by 11\. so the dot is treated as a literal character instead of a wildcard. This counts events whose source IP address begins with 11.
+```
